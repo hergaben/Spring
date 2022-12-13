@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleView);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://hleby6ek.p.rapidapi.com/")
+                .baseUrl("http://10.0.2.2:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                 for (Stats stats:stat){
                     SpringList.add(stats);
-                    Log.d("!!!!!!", "Norm!");
+                    Log.d("Connect", retrofit.baseUrl() + "");
                 }
                 PutDataIntoRecyclerView(SpringList);
 
